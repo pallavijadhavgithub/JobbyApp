@@ -1,0 +1,8 @@
+.skills-list {
+  list-style-type: none;
+  display: flex;
+}
+.skills-unorder {
+  display: flex;
+  flex-wrap: wrap;
+}
