@@ -183,15 +183,15 @@ class Jobs extends Component {
     <div className="failure-job-view">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-        alt="failure-view"
+        alt="failure view"
         className="failure-image"
       />
       <h1>Ooops! Something Went Wrong</h1>
-      <p>We cannot seem the page you are looking for.</p>
+      <p>We cannot seem to find the page you are looking for</p>
       <button
         type="button"
         className="failure-button"
-        onClick={this.getProfileDetails}
+        onClick={this.getJobItems}
       >
         Retry
       </button>
@@ -227,12 +227,15 @@ class Jobs extends Component {
   }
 
   getEmploymentTypesList = each => (
-    <li className="list-item" key={each.employmentTypeId}>
+    <li
+      className="list-item"
+      key={each.employmentTypeId}
+      onChange={this.onChangeEmployeType}
+    >
       <input
         type="checkbox"
         id={each.employmentTypeId}
         value={each.employmentTypeId}
-        onChange={this.onChangeEmployeType}
       />
       <label htmlFor={each.employmentTypeId} className="label-el">
         {each.label}
@@ -242,7 +245,7 @@ class Jobs extends Component {
 
   renderEmploymentType = () => (
     <div className="employement-container">
-      <h1 className="heading-type">Types of Employment</h1>
+      <h1 className="heading-type">Type of Employment</h1>
       <ul>
         {employmentTypesList.map(each => this.getEmploymentTypesList(each))}
       </ul>
@@ -250,12 +253,12 @@ class Jobs extends Component {
   )
 
   getSalaryTypesList = each => (
-    <li className="list-item" key={each.salaryRangeId}>
-      <input
-        type="radio"
-        id={each.salaryRangeId}
-        onChange={this.onChangeSalary}
-      />
+    <li
+      className="list-item"
+      key={each.salaryRangeId}
+      onChange={this.onChangeSalary}
+    >
+      <input type="radio" id={each.salaryRangeId} />
       <label htmlFor={each.salaryRangeId} className="label-el">
         {each.label}
       </label>
@@ -310,6 +313,7 @@ class Jobs extends Component {
                 type="button"
                 className="icon-button"
                 data-testid="searchButton"
+                onClick={this.getJobItems}
               >
                 <AiOutlineSearch size="24" className="search-icon" />
               </button>
@@ -333,6 +337,7 @@ class Jobs extends Component {
                 type="button"
                 className="icon2-button"
                 data-testid="searchButton"
+                onClick={this.getJobItems}
               >
                 <AiOutlineSearch />
               </button>

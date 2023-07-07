@@ -1,0 +1,31 @@
+.list-item-similar {
+  background-color: #272727;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.similar-con {
+  display: flex;
+  align-items: center;
+}
+.similar-title {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #f8fafc;
+  margin-bottom: 0;
+}
+.image-similar {
+  width: 50px;
+  margin-right: 10px;
+}
+.job-desc {
+  color: #f8fafc;
+  font-size: 14px;
+  font-family: 'Roboto';
+}
+.desc {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #f1f5f9;
+}

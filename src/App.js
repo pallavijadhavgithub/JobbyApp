@@ -1,10 +1,11 @@
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 import Login from './components/Login'
 import Home from './components/Home'
 import Jobs from './components/Jobs'
 import NotFound from './components/NotFound'
 import JobItemDetails from './components/JobItemDetails'
+import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -50,10 +51,11 @@ import './App.css'
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <Route exact path="/" component={Home} />
-    <Route exact path="/jobs" component={Jobs} />
-    <Route path="/jobs/:id" component={JobItemDetails} />
-    <Route component={NotFound} />
+    <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute exact path="/jobs" component={Jobs} />
+    <ProtectedRoute path="/jobs/:id" component={JobItemDetails} />
+    <Route path="/not-found" component={NotFound} />
+    <Redirect to="not-found" />
   </Switch>
 )
 

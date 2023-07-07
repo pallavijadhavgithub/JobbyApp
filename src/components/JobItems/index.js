@@ -20,7 +20,7 @@ class JobItems extends Component {
               <div className="company-detail">
                 <img
                   src={each.companyLogoUrl}
-                  alt="logo"
+                  alt="company logo"
                   className="logo-image"
                 />
                 <div>
@@ -60,7 +60,7 @@ class JobItems extends Component {
           className="no-jobs-image"
         />
         <h1>No Jobs Found</h1>
-        <p>We could not found any jobs, Try other filters.</p>
+        <p>We could not find any jobs. Try other filters</p>
       </div>
     )
   }
